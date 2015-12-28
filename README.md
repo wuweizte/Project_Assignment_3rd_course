@@ -1,20 +1,16 @@
-# Project_Assignment_3rd_course
+## Project_Assignment_3rd_course
 
-1. run_analysis.R consists of 2 parts : Function Definition Part and Execution 
-Part. 
+####1. run_analysis.R consists of 2 parts : Function Definition Part and Execution Part. 
 
-2. Five functions are defined in Function Definition Part. They realized respective
-step according to the requirement. These 5 functions are shown as follows:
+####2. Five functions are defined in Function Definition Part. They realized respective step according to the requirements. These 5 functions are shown as follows:
 
-2-1) Merge_Traning_and_Test_Set(): The 1st step--Merges the training and the 
-test sets to create one data set.
+2-1) Merge_Traning_and_Test_Set(): The 1st step--Merges the training and the test sets to create one data set.
 
-a)Inputting Training set
-b)Append activity and subject columns to the training set
-c)Inputting Test set
-d)Append activity and subject columns to the test set
-e)Merges the training set and the test set to create one whole data set and return it 
-as the function output.
+a) Inputting Training set
+b) Append activity and subject columns to the training set
+c) Inputting Test set
+d) Append activity and subject columns to the test set
+e) Merges the training set and the test set to create one whole data set and return it as the function output.
 
 
 2-2) Extract_Mean_and_Std_Col(): The 2nd step--Extracts only the measurements 
@@ -55,12 +51,10 @@ creates a second, independent tidy data set with the average of each variable fo
 each activity and each subject.
 
 a) The output data set in step4 is the only input parameter.
-b) Create the mean volumn for the 1st variable.
-c) Calculate the mean column of the rest variables.
-d) Appropriately labels the data set with descriptive variable names.
+b) Calculate the average of each variable of the data set for each activity and 
+   each subject.
+c) Appropriately labels the data set with descriptive variable names.
 
-3. The above 5 functions are called subsequently in execution part to get the 
-tidy data set.
+####3. The above 5 functions are called subsequently in execution part to get the tidy data set.
 
-4. run_analysis.R must be placed with 'UCI HAR Dataset' folder together under the 
-working directory. 
+####4. run_analysis.R must be placed with 'UCI HAR Dataset' folder together under the working directory. 

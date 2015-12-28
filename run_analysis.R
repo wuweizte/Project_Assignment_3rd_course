@@ -108,29 +108,20 @@ Group_By_ActivityLabel_subject <- function(dataset_created_in_step4){
         
         colname_Activity_and_Subject <- colnames(Activity_and_Subject)
         colnum_Activity_and_Subject <- length(Activity_and_Subject)
-        
-        ## Create the mean volumn for the 1st variable
-        Activity_and_Subject$temp <- Activity_and_Subject[[1]]
-        dataset_created_in_step5 <- summarize(Activity_and_Subject, mean(temp))
-        
-        ## Use recycle to calculate the mean column of the rest variables and 
-        ## append to the result dataset
-        for(i in 2:(colnum_Activity_and_Subject - 2)){
                 
-                Activity_and_Subject$temp <- Activity_and_Subject[[i]]               
-                TempDataSet <- summarize(Activity_and_Subject, mean(temp))
-                
-                dataset_created_in_step5 <- 
-                        cbind(dataset_created_in_step5, TempDataSet[3])
-                
-        }
-        
+        dataset_created_in_step5 <- summarise_each(Activity_and_Subject, 
+                                                   funs(mean))
+
         ## labels the data set with descriptive variable names
-        colnames(dataset_created_in_step5)[3:colnum_Activity_and_Subject] <-  
-                paste("mean of " , 
-                      colname_Activity_and_Subject[1:
-                                        (colnum_Activity_and_Subject - 2)])
         
+        ## ActivityLabel and subject columns of Activity_and_Subject data set
+        ## are located in the last 2 positions, and those of dataset_created_in_step5
+        ## are located in the first 2 positions.
+        colnames(dataset_created_in_step5)[3:colnum_Activity_and_Subject] <-  
+                        paste("mean of " ,
+                                 colname_Activity_and_Subject[1:
+                                             (colnum_Activity_and_Subject - 2)])
+                
         return(dataset_created_in_step5)
         
 }
